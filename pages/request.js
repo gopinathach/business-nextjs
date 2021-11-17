@@ -60,7 +60,7 @@ export default function request() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-toggles"
+              // class="bi bi-toggles"
               viewBox="0 0 16 16"
             >
               <path d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z" />
@@ -73,7 +73,7 @@ export default function request() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-bounding-box"
+              // class="bi bi-bounding-box"
               viewBox="0 0 16 16"
             >
               <path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
