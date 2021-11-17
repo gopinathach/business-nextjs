@@ -162,7 +162,7 @@ export default function request() {
           </div>
           <div className="content_right">
             <p>Filter</p>
-            <div class="dropdown">
+            <div className="dropdown">
               <Dropdown overlay={menu} trigger={["click"]}>
                 <Button
                   className="ant-dropdown-link"
@@ -236,13 +236,7 @@ export default function request() {
           margin: 1rem;
           font-family: sans-serif;
         }
-        .dropdown > a {
-          background-color: #fff;
-          border: 5px;
-          border-color: grey;
-          padding: 5px 10px;
-          text-decoration: none;
-        }
+        
         .content_table {
           padding: 0rem 2rem;
         }
