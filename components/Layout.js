@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import layout from "../public/layout.jpg";
 import rslogo from "../public/rslogo.png";
 import avatar from "../public/avatar.png";
 
@@ -8,50 +7,52 @@ export default function Layouts({ children }) {
   return (
     <div className="layout">
       <div className="layout_image">
-        <nav>
-          <Image src={rslogo} width={180} height={120} />
+        <Image src={rslogo} width={160} height={100} />
 
-          <div className="left_nav">
-            <Image src={avatar} width={60} height={50} />
+        <div className="right_layout-img">
+          <Image src={avatar} width={50} height={40} />
 
-            <div className="right_nav_user">
-              <p> Avatar </p>
-              <p> Todays sign in 8:30 am</p>
-            </div>
+          <div className="right_layout_user">
+            <p style={{ color: "#00e1ff" }}> Avatar </p>
+            <p> Todays sign in 8:30 am </p>
           </div>
-        </nav>
+        </div>
       </div>
 
-      <div className="layout_pages">
-        <div className="layout_pages_left">
+      <div className="navbar">
+        <div className="nav_left">
           <Link href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="#42C0FB"
-              // class="bi bi-house-door-fill"
+              className="bi bi-house-door-fill"
               viewBox="0 0 16 16"
             >
               <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
             </svg>
           </Link>
+
           <a>Budget Process</a>
-          <Link href="/request"><a>PR Request</a></Link>
-          <Link href="/mytasks"><a>My Tasks</a></Link>
+          <Link href="/request">
+            <a className="a-pr">PR Request</a>
+          </Link>
+          <Link href="/mytasks">
+            <a>My Tasks</a>
+          </Link>
           <a>RFP Forms</a>
           <a>Evaluation Report</a>
         </div>
-        <div className="layout_pages_right">
-          <p>Day Time | Date</p>
+        <div className="nav_right">
+          <p style={{ color: "#00e1ff", marginRight: "10px" }}> Day </p>
+          <p> Time </p> | <p> Date</p>
         </div>
       </div>
 
-      <div className="background">
-        <Image src={layout} width={1800} height={1000} />
+      <div className="main-page-content">
+        <div className="page-content">{children}</div>
       </div>
-
-      <div className="page-content">{children}</div>
 
       <style jsx>{`
         .layout {
@@ -61,50 +62,55 @@ export default function Layouts({ children }) {
         }
 
         .layout_image {
-          margin: 0 10% 0;
-        }
-
-        nav {
-          top: 0;
-          width: 100%;
+          margin: 0 14%;
           display: flex;
           justify-content: space-between;
         }
 
-        .left_nav {
+        .right_layout-img {
           display: flex;
           align-items: center;
         }
 
-        .right_nav_user {
+        .right_layout_user {
           font-size: 12px;
-          color: green;
-          margin-left: 30px;
+          margin: 0px 20px;
         }
 
-        .layout_pages {
+        .navbar {
+          background-color: #e5e4db;
           height: 30px;
-          width: 100%;
-          background-color: #d3d3d3;
+          overflow: hidden;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
-          flex-wrap: nowrap;
-          align-content: center
         }
 
-        .layout_pages_right {
+        .nav_right {
           margin-right: 30px;
+          display: flex;
         }
 
-        .layout_pages_left {
-          margin: 0px 20px; 
-          cursor: pointer; 
+        .nav_left {
+          margin: 0px 20px;
+          cursor: pointer;
+        }
+        @media only screen and (max-width: 700px) {
+          .nav_left,
+          .nav_right {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            padding: 30px;
+          }
+          .navbar {
+            height: 38px;
+          }
         }
 
         a {
-          background-color: #d3d3d3;
-          color: #191919;
+          text-align: center;
+          color: black;
           padding: 5px 10px;
           text-decoration: none;
         }
@@ -120,22 +126,25 @@ export default function Layouts({ children }) {
           color: white;
         }
 
-
-        .page-content{
-            
-            position:absolute;
-            top:25%;
-            margin: 0 15%;
-            z-index:1;
-            background-color: white;
-            height: 100vh;
-            width: 70%;
-            border-radius:10px;
-            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-          
+        p {
+          margin-top: 0;
+          margin-bottom: 0em;
         }
-       
 
+        .main-page-content {
+          display: flex;
+          width: 100vw !important;
+          justify-content: center;
+        }
+        .page-content {
+          position: sticky;
+          margin: 30px 0px;
+          background-color: white;
+          height: auto;
+          width: 70vw;
+          border-radius: 3px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
       `}</style>
     </div>
   );
