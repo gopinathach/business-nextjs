@@ -95,7 +95,7 @@ export default function Layouts({ children }) {
           margin: 0px 20px;
           cursor: pointer;
         }
-        @media only screen and (max-width: 700px) {
+        @media only screen and (max-width: 730px) {
           .nav_left,
           .nav_right {
             display: flex;
