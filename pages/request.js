@@ -9,7 +9,9 @@ export default function request() {
     <div className="request">
       <h2>PR Request</h2>
 
-      <div className="line"></div>
+      <div className="line">
+
+      </div>
 
       <div className="content">
         <div className="content_find">
@@ -19,7 +21,7 @@ export default function request() {
               <input
                 type="text"
                 className="input"
-                placeholder="Search..."
+                placeholder="Search.."
               />
             </div>
           </div>
@@ -326,7 +328,7 @@ export default function request() {
         .search_box {
           display: flex;
           align-items: center;
-          width: 200px;
+          width: 199px;
           height: 30px;
           background-color: #e2e2e2;
           padding: 0 10px;
