@@ -3,82 +3,77 @@ import "antd/dist/antd.css";
 import Image from "next/image";
 import search from "../public/search1.png";
 
-
 export default function request() {
- 
- const tableData = [
-  {
-    "id": "1",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New data center , Qatar",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "2",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New data center , Romania",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "3",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New Electric center , Qatar",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "4",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New Electric center , Ukraine",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "5",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New Data center , Ukraine",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "6",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New Electric center , Yeman",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  },
-  {
-    "id": "7",
-    "Request ID": "0019001",
-    "Priority": "Low",
-    "Project Name": "New Electric center , Oman",
-    "Iniated Date": "17/12/2020",
-    "status": "Submited",
-    "actions": ""
-  }
-]
- 
-const searchData = tableData.filter((data)=>{ 
-  return <div id={data.id}>
-      {data["Project Name"].includes}
-  </div> 
-})
-// console.log(searchData);
+  const tableData = [
+    {
+      id: "1",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New data center , Qatar",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "2",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New data center , Romania",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "3",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New Electric center , Qatar",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "4",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New Electric center , Ukraine",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "5",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New Data center , Ukraine",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "6",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New Electric center , Yeman",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+    {
+      id: "7",
+      "Request ID": "0019001",
+      Priority: "Low",
+      "Project Name": "New Electric center , Oman",
+      "Iniated Date": "17/12/2020",
+      status: "Submited",
+      actions: "",
+    },
+  ];
 
+  const searchData = tableData.filter((data) => {
+    return <div id={data.id}>{data["Project Name"].includes}</div>;
+  });
+  // console.log(searchData);
 
   return (
     <div className="request">
@@ -91,11 +86,11 @@ const searchData = tableData.filter((data)=>{
           <div className="content_left">
             <div className="search_box">
               <Image src={search} width={18} height={18} />
-              <input 
-               type="text"
-               className="input" 
-               placeholder="Search..."
-               onchange= {searchData}
+              <input
+                type="text"
+                className="input"
+                placeholder="Search..."
+                onchange={searchData}
               />
             </div>
           </div>
@@ -119,20 +114,20 @@ const searchData = tableData.filter((data)=>{
                 <th>Priority</th>
                 <th>Project Name</th>
                 <th>Iniated Date</th>
-                <th>status</th>
-                <th>actions</th>
+                <th>Status</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New data center , Qatar</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New data center , Qatar</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -160,14 +155,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New data center , Romania</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New data center , Romania</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -195,14 +190,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New Electric center , Qatar</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New Electric center , Qatar</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -230,14 +225,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New Electric center , Ukraine</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New Electric center , Ukraine</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -265,14 +260,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New Data center , Ukraine</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New Data center , Ukraine</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -300,14 +295,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New Electric center , Yeman</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New Electric center , Yeman</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -335,14 +330,14 @@ const searchData = tableData.filter((data)=>{
                 </td>
               </tr>
               <tr>
-                <td>0019001</td>
-                <td>Low</td>
-                <td>New Electric center , Oman</td>
-                <td>17/12/2020</td>
-                <td>
+                <td data-label="Request ID">0019001</td>
+                <td data-label="Priority">Low</td>
+                <td data-label="Project Name">New Electric center , Oman</td>
+                <td data-label="Iniated Date">17/12/2020</td>
+                <td data-label="Status">
                   <button className="submit">Submited</button>
                 </td>
-                <td>
+                <td data-label="Actions">
                   <a style={{ marginRight: "10px" }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -415,21 +410,7 @@ const searchData = tableData.filter((data)=>{
           height: 30px;
           margin-left: 10px;
         }
-        @media only screen and (max-width: 700px) {
-          .content_find {
-            padding: 0.5rem 1rem;
-          }
-          .search_box{
-          width: 100px;
-          height: 30px;
-          padding: 0 5px;
-          }
-          .search_box input {
-            width: 60px;
-            height: 30px;
-            margin-left: 5px;
-          }
-        }
+
         .dropdown select {
           outline: none;
           border: 0;
@@ -437,12 +418,7 @@ const searchData = tableData.filter((data)=>{
           width: 230px;
           height: 30px;
         }
-        @media only screen and (max-width: 700px) {
-          .dropdown select {
-            width: 180px;
-          }
-        }
-        
+
         .content_right {
           display: flex;
           align-items: center;
@@ -464,13 +440,6 @@ const searchData = tableData.filter((data)=>{
           min-width: 400px;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
         }
-        @media only screen and (max-width: 700px) {
-          .styled-table { 
-            width: 80%;
-            font-size: 0.7em; 
-            min-width: 200px;
-          }
-        }
         .styled-table thead tr {
           background-color: #e5e4db;
           color: 2e2e2c;
@@ -479,19 +448,7 @@ const searchData = tableData.filter((data)=>{
         .styled-table th,
         .styled-table td {
           padding: 8px 15px;
-          text-align:center;
-        }
-        @media only screen and (max-width: 730px) {
-          .styled-table th,
-          .styled-table td {
-          padding: 6px 12px;
-          }
-        }
-        @media only screen and (max-width: 600px) {
-          .styled-table th,
-          .styled-table td {
-          padding: 4px 8px;
-          }
+          text-align: center;
         }
         .styled-table tbody tr {
           border-bottom: 1px solid #e5e4db;
@@ -503,25 +460,15 @@ const searchData = tableData.filter((data)=>{
           font-weight: bold;
           color: black;
         }
-        .submit{
+        .submit {
           border: none;
           width: 100px;
-          height:30px;
-          color:#d40000;
-          background-color:#f8cccc;
-          border-radius:20px;
+          height: 30px;
+          color: #d40000;
+          background-color: #f8cccc;
+          border-radius: 20px;
         }
 
-        @media only screen and (max-width: 850px) {
-        .submit { width: 80px;
-          height:25px;
-          border-radius:15px;}
-        }
-        @media only screen and (max-width: 750px) {
-          .submit { width: 60px;
-            height:20px;
-            border-radius:10px;}
-          }
         .content_bottom {
           display: flex;
           justify-content: space-around;
@@ -533,8 +480,80 @@ const searchData = tableData.filter((data)=>{
           color: #878787;
           font-weight: bold;
         }
-        @media only screen and (max-width: 700px) {
-          .content_bottom { 
+
+        @media only screen and (max-width: 768px) {
+          h2 {
+            font-size: 1rem;
+          }
+          .content_find {
+            padding: 0.5rem 1rem;
+          }
+          .search_box {
+            width: 100px;
+            height: 28px;
+            padding: 0 5px;
+          }
+          .search_box input {
+            width: 60px;
+            height: 28px;
+            margin-left: 5px;
+          }
+          .dropdown select {
+            width: 160px;
+            height: 28px;
+          }
+          .content_right > p {
+            margin: 0.8rem;
+          }
+        }
+
+        @media only screen and (max-width: 850px) {
+          .styled-table,
+          .styled-table tbody,
+          .styled-table tr,
+          .styled-table td {
+            display: block;
+            width: 100%;
+          }
+          .styled-table tbody tr td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+          }
+          .styled-table td:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 50%;
+            padding-left: 15px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            text-align: left;
+          }
+
+          .styled-table tbody tr {
+            border-bottom: 1px solid #e5e4db;
+            margin-bottom: 30px;
+          }
+          .styled-table thead tr {
+            display: none;
+          }
+          .styled-table {
+            width: 100%;
+            font-size: 0.7rem;
+            min-width: 200px;
+          }
+        }
+
+        @media only screen and (max-width: 768px) {
+          .submit {
+            width: 80px;
+            height: 25px;
+            border-radius: 15px;
+          }
+        }
+        @media only screen and (max-width: 768px) {
+          .content_bottom {
             margin: 20px 40px 10px 40px;
           }
           .content_bottom > p {

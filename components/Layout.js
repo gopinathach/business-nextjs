@@ -3,31 +3,26 @@ import Image from "next/image";
 import rslogo from "../public/rslogo.png";
 import avatar from "../public/avatar.png";
 
-
 export default function Layouts({ children }) {
-
-
   return (
     <div className="layout">
-
       <div className="layout_image">
         <Image src={rslogo} width={160} height={100} />
 
         <div className="right_layout-img">
           <Image src={avatar} width={50} height={40} />
 
-          <div className="right_layout_user">
-            <p style={{ color: "#00e1ff" }}> Avatar </p>
-            <p> Todays sign in 8:30 am </p>
+          <div className="right_layout_user res_user">
+            <p style={{ color: "#00e1ff" }} className="res_user">
+              {" "}
+              Avatar{" "}
+            </p>
+            <p className="res_user"> Todays sign in 8:30 am </p>
           </div>
         </div>
       </div>
 
-      <div className="navbar" >
-        {/* <input type="checkbox" id="check" />
-        <label for="check" className="checkbtn">
-        <i class="fas fa-bars"></i>
-          </label> */}
+      <div className="navbar">
         <div className="nav_left">
           <Link href="/">
             <svg
@@ -52,7 +47,7 @@ export default function Layouts({ children }) {
           <a>RFP Forms</a>
           <a>Evaluation Report</a>
         </div>
-        <div className="nav_right">
+        <div className="nav_right res_user">
           <p style={{ color: "#00e1ff", marginRight: "10px" }}> Day </p>
           <p> Time </p> | <p> Date</p>
         </div>
@@ -93,7 +88,7 @@ export default function Layouts({ children }) {
           justify-content: space-around;
           align-items: center;
         }
-       
+
         .nav_right {
           margin-right: 30px;
           display: flex;
@@ -102,26 +97,8 @@ export default function Layouts({ children }) {
         .nav_left {
           margin: 0px 20px;
           cursor: pointer;
-        }
-        @media only screen and (max-width: 730px) {
-          .nav_left,
-          .nav_right {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            padding: 30px;
-          }
-          .navbar {
-            height: 38px;
-          }
-        }
-        @media only screen and (max-width: 400px) {
-          .navbar {
-            height: 38px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-          }
+          display:flex;
+          align-items: center;
         }
 
         a {
@@ -141,20 +118,6 @@ export default function Layouts({ children }) {
           background-color: red;
           color: white;
         }
-
-        .checkbtn {
-          font-size: 30px;
-          color: white;
-          float:right;
-          line-height: 60px;
-          margin-right: 40px;
-          cursor: pointer;
-        }
-
-        #check{
-          display:none;
-        }
-
         p {
           margin-top: 0;
           margin-bottom: 0em;
@@ -173,6 +136,23 @@ export default function Layouts({ children }) {
           width: 70vw;
           border-radius: 3px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        @media only screen and (max-width: 768px) {
+          .navbar, .nav_left {
+            height: auto;
+            width: 100%; 
+          }
+          .nav_left {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+          }
+        }
+
+        @media only screen and (max-width: 768px) {
+          .res_user {
+            display: none;
+          }
         }
       `}</style>
     </div>
