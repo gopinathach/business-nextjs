@@ -3,9 +3,13 @@ import Image from "next/image";
 import rslogo from "../public/rslogo.png";
 import avatar from "../public/avatar.png";
 
+
 export default function Layouts({ children }) {
+
+
   return (
     <div className="layout">
+
       <div className="layout_image">
         <Image src={rslogo} width={160} height={100} />
 
@@ -19,7 +23,11 @@ export default function Layouts({ children }) {
         </div>
       </div>
 
-      <div className="navbar">
+      <div className="navbar" >
+        {/* <input type="checkbox" id="check" />
+        <label for="check" className="checkbtn">
+        <i class="fas fa-bars"></i>
+          </label> */}
         <div className="nav_left">
           <Link href="/">
             <svg
@@ -85,7 +93,7 @@ export default function Layouts({ children }) {
           justify-content: space-around;
           align-items: center;
         }
-
+       
         .nav_right {
           margin-right: 30px;
           display: flex;
@@ -107,6 +115,14 @@ export default function Layouts({ children }) {
             height: 38px;
           }
         }
+        @media only screen and (max-width: 400px) {
+          .navbar {
+            height: 38px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+        }
 
         a {
           text-align: center;
@@ -124,6 +140,19 @@ export default function Layouts({ children }) {
         a:active {
           background-color: red;
           color: white;
+        }
+
+        .checkbtn {
+          font-size: 30px;
+          color: white;
+          float:right;
+          line-height: 60px;
+          margin-right: 40px;
+          cursor: pointer;
+        }
+
+        #check{
+          display:none;
         }
 
         p {
