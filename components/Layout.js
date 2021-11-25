@@ -97,7 +97,7 @@ export default function Layouts({ children }) {
         .nav_left {
           margin: 0px 20px;
           cursor: pointer;
-          display:flex;
+          display: flex;
           align-items: center;
         }
 
@@ -138,9 +138,10 @@ export default function Layouts({ children }) {
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
         @media only screen and (max-width: 768px) {
-          .navbar, .nav_left {
+          .navbar,
+          .nav_left {
             height: auto;
-            width: 100%; 
+            width: 100%;
           }
           .nav_left {
             display: flex;

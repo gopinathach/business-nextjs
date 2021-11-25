@@ -4,76 +4,6 @@ import Image from "next/image";
 import search from "../public/search1.png";
 
 export default function request() {
-  const tableData = [
-    {
-      id: "1",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New data center , Qatar",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "2",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New data center , Romania",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "3",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New Electric center , Qatar",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "4",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New Electric center , Ukraine",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "5",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New Data center , Ukraine",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "6",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New Electric center , Yeman",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-    {
-      id: "7",
-      "Request ID": "0019001",
-      Priority: "Low",
-      "Project Name": "New Electric center , Oman",
-      "Iniated Date": "17/12/2020",
-      status: "Submited",
-      actions: "",
-    },
-  ];
-
-  const searchData = tableData.filter((data) => {
-    return <div id={data.id}>{data["Project Name"].includes}</div>;
-  });
-  // console.log(searchData);
 
   return (
     <div className="request">
@@ -90,7 +20,6 @@ export default function request() {
                 type="text"
                 className="input"
                 placeholder="Search..."
-                onchange={searchData}
               />
             </div>
           </div>
