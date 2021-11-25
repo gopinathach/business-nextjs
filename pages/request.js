@@ -437,7 +437,14 @@ export default function request() {
             margin: 0.8rem;
           }
         }
-
+        @media only screen and (max-width: 400px) {
+          .content_find {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+          }
+        
+        }
         @media only screen and (max-width: 850px) {
           .styled-table,
           .styled-table tbody,
