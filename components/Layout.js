@@ -15,8 +15,9 @@ export default function Layouts({ children }) {
   return (
     <div className="layout">
       <div className="layout_image">
-        <Image src={rslogo} width={160} height={100} />
-
+      <Link href="/">
+        <Image src={rslogo} width={150} height={100}/>
+          </Link>
         <div className="right_layout-img">
           <Image src={avatar} width={50} height={40} />
 
