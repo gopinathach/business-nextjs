@@ -441,9 +441,9 @@ export default function request() {
           .content_find {
             display: flex;
             flex-direction: column;
-            align-items: left;
+            align-items: center;
           }
-        
+          
         }
         @media only screen and (max-width: 850px) {
           .styled-table,

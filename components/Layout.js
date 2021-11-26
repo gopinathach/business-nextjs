@@ -23,12 +23,17 @@ export default function Layouts({ children }) {
       </div>
 
       <div className="navbar">
+      <div className="nav_toggle">
+        <span className="toggle"></span>
+        <span className="toggle"></span>
+        <span className="toggle"></span>
+        </div>
         <div className="nav_left">
           <Link href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="18"
+              height="17"
               fill="#42C0FB"
               className="bi bi-house-door-fill"
               viewBox="0 0 16 16"
@@ -97,8 +102,21 @@ export default function Layouts({ children }) {
         .nav_left {
           margin: 0px 20px;
           cursor: pointer;
-          display: flex;
           align-items: center;
+        }
+        .nav_toggle{
+          position: absolute;
+          display:none;
+          flex-direction: column;
+          justify-content: space-between;
+          width:30px;
+          height: 23px;
+        }
+        .nav_toggle .toggle{
+          width:100%px;
+          height: 3px;
+          background-color: #42C0FB;
+          border-radius:10px;
         }
 
         a {
@@ -138,17 +156,24 @@ export default function Layouts({ children }) {
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
         @media only screen and (max-width: 768px) {
-          .navbar,
-          .nav_left {
+          .nav_toggle{
+            display:flex;
+            justify-content:space-between;
+            margin-left:80%;
+            margin-bottom:20%;
+          }
+          .navbar {
             height: auto;
-            width: 100%;
-          }
-          .nav_left {
             display: flex;
-            flex-direction: column;
-            align-items: left;
+            justify-content:center;
+            padding: 10px;       
           }
-        }
+          .nav_left{
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+          }
+          }
 
         @media only screen and (max-width: 768px) {
           .res_user {
