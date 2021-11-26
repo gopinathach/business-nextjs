@@ -438,13 +438,32 @@ export default function request() {
           }
         }
         @media only screen and (max-width: 400px) {
-          .content_find {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            h2 {
+              font-size: 0.8rem;
+            }
+            .content_find {
+              padding: 0.4rem 1rem;
+            }
+            .search_box {
+              width: 60px;
+              height: 20px;
+              padding: 0 4px;
+            }
+            .search_box input {
+              width: 40px;
+              height: 20px;
+              margin-left: 4px;
+            }
+            .dropdown select {
+              width: 100px;
+              height: 20px;
+            }
+            .content_right > p {
+              font-size: 0.7rem;
+              margin-right: 0.5rem;
+            }
           }
           
-        }
         @media only screen and (max-width: 850px) {
           .styled-table,
           .styled-table tbody,
