@@ -2,22 +2,26 @@ import Link from "next/link";
 import Image from "next/image";
 import rslogo from "../public/rslogo.png";
 import avatar from "../public/avatar.png";
+import { Drawer, Button,  Space } from "antd";
 import { useState } from "react";
+import "antd/dist/antd.css";
 
 export default function Layouts({ children }) {
-  const [humburgerEnable, sethumburgerEnable] = useState(false);
-  const handleHumBurgerClick = () => {
-    sethumburgerEnable(
-      humburgerEnable == true ? false : humburgerEnable == false ? true : false
-    );
+  const [visible, setVisible] = useState(false);
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
   };
 
   return (
     <div className="layout">
       <div className="layout_image">
-      <Link href="/">
-        <Image src={rslogo} width={150} height={100}/>
-          </Link>
+        <Link href="/">
+          <Image src={rslogo} width={150} height={100} />
+        </Link>
         <div className="right_layout-img">
           <Image src={avatar} width={50} height={40} />
 
@@ -32,14 +36,6 @@ export default function Layouts({ children }) {
       </div>
 
       <div className="navbar">
-        <div className="navtoggleholder">
-          <div className="nav_toggle" onClick={handleHumBurgerClick}>
-            <span className="toggle"></span>
-            <span className="toggle"></span>
-            <span className="toggle"></span>
-          </div>
-        </div>
-
         <div className="nav-left-hide">
           <Link href="/">
             <svg
@@ -64,7 +60,36 @@ export default function Layouts({ children }) {
           <a>RFP Forms</a>
           <a>Evaluation Report</a>
         </div>
-        {humburgerEnable == true ? (
+
+        <div className="nav_right res_user">
+          <p style={{ color: "#00e1ff", marginRight: "10px" }}> Day </p>
+          <p> Time </p> | <p> Date</p>
+        </div>
+      </div>
+
+      <div className="navtoggleholder">
+        <Space>
+          <div className="nav_toggle" onClick={showDrawer}>
+            <span className="toggle"></span>
+            <span className="toggle"></span>
+            <span className="toggle"></span>
+          </div>
+        </Space>
+        <Drawer
+          title="Business"
+          placement="left"
+          width={"60%"}
+          onClose={onClose}
+          visible={visible}
+          extra={
+            <Space>
+              <Button onClick={onClose}>Cancel</Button>
+              <Button type="primary" onClick={onClose}>
+                OK
+              </Button>
+            </Space>
+          }
+        >
           <div className="nav_left">
             <Link href="/">
               <svg
@@ -89,14 +114,7 @@ export default function Layouts({ children }) {
             <a>RFP Forms</a>
             <a>Evaluation Report</a>
           </div>
-        ) : (
-          <div></div>
-        )}
-
-        <div className="nav_right res_user">
-          <p style={{ color: "#00e1ff", marginRight: "10px" }}> Day </p>
-          <p> Time </p> | <p> Date</p>
-        </div>
+        </Drawer>
       </div>
 
       <div className="main-page-content">
@@ -129,9 +147,9 @@ export default function Layouts({ children }) {
         .navbar {
           background-color: #e5e4db;
           height: 30px;
-          overflow: hidden;
           display: flex;
           justify-content: space-around;
+          padding-left: 20px;
           align-items: center;
         }
 
@@ -141,9 +159,8 @@ export default function Layouts({ children }) {
         }
 
         .nav_left {
-          margin: 0px 20px;
+          display: flex;
           cursor: pointer;
-          align-items: center;
         }
         .nav_toggle {
           position: absolute;
@@ -157,7 +174,6 @@ export default function Layouts({ children }) {
           width: 100%px;
           height: 4px;
           background-color: #42c0fb;
-          border-radius: 20%;
         }
 
         a {
@@ -170,11 +186,7 @@ export default function Layouts({ children }) {
         a:hover {
           background-color: #42c0fb;
           cursor: pointer;
-          color: white;
-        }
-
-        a:active {
-          background-color: red;
+          text-align: left;
           color: white;
         }
         p {
@@ -196,6 +208,12 @@ export default function Layouts({ children }) {
           border-radius: 3px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
+        @media only screen and (max-width: 1024px) {
+          .navbar {
+            justify-content: space-evenly;
+          }
+        }
+
         @media only screen and (max-width: 768px) {
           .nav_toggle {
             display: flex;
@@ -205,27 +223,68 @@ export default function Layouts({ children }) {
           }
           .navtoggleholder {
             display: flex;
-            width: 100vw;
-            justify-content: flex-end;
-            margin:5px;
+            width: 80vw;
+            justify-content: flex-start;
+            margin: 10px 40px;
+            top: 104px;
+            position: absolute;
+            z-index: 1;
           }
           .nav-left-hide {
-            display: none;
+            display: none !important;
           }
           .navbar {
             display: flex;
             flex-direction: column;
             height: auto;
-            min-height: 50px;
+            min-height: 45px;
             margin: 5px 0;
           }
           .nav_left {
             flex-direction: column;
             display: flex;
-            justify-content: center;
+            align-items: flex-start;
+          }
+          a {
+            color: black;
+            margin-top: 10px;
+            padding: 15px 0px;
+          }
+
+          a:hover {
+            background-color: #42c0fb;
+            width: 100%;
+            cursor: pointer;
+            padding-left: 10px;
+            color: white;
+          }
+          a:active {
+            background-color: #42c0fb;
+            padding-left: 10px;
+            color: white;
+          }
+          .page-content {
+            margin: 25px 0px;
+            width: 90vw;
+          }
+
+          .layout_image {
+            margin: 0;
+          }
+          .right_layout-img {
+            margin-right: 15px;
           }
         }
-
+        @media only screen and (max-width: 460px) {
+          .navtoggleholder {
+            margin: 10px 20px;
+          }
+        }
+        @media only screen and (max-width: 360px) {
+          .navtoggleholder {
+            margin: 10px 23px;
+          }
+        }
         @media only screen and (max-width: 768px) {
           .res_user {
             display: none;

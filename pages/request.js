@@ -417,7 +417,7 @@ export default function request() {
             font-size: 1rem;
           }
           .content_find {
-            padding: 0.5rem 1rem;
+            padding: -0.5rem 0.5rem;
           }
           .search_box {
             width: 100px;
@@ -437,31 +437,42 @@ export default function request() {
             margin: 0.8rem;
           }
         }
-        @media only screen and (max-width: 400px) {
-            h2 {
-              font-size: 0.8rem;
-            }
+        @media only screen and (max-width: 460px) {
             .content_find {
-              padding: 0.4rem 1rem;
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
             }
             .search_box {
-              width: 60px;
-              height: 20px;
-              padding: 0 4px;
+              width: 76vw;
+              height: 28px;
+              padding: 0 5px;
             }
             .search_box input {
-              width: 40px;
-              height: 20px;
-              margin-left: 4px;
+              width: 55vw;
+              height: 28px;
+              margin-left: 5px;
             }
             .dropdown select {
-              width: 100px;
-              height: 20px;
+              width: 76vw;
+              height: 28px;
+              margin-top: 15px;
             }
+
             .content_right > p {
-              font-size: 0.7rem;
-              margin-right: 0.5rem;
+              display:none;
             }
+          }
+        @media only screen and (max-width: 360px) {
+          .search_box {
+            width: 72vw;
+          }
+          .search_box input {
+            width: 50vw;
+          }
+          .dropdown select {
+            width: 72vw;
+          }
           }
           
         @media only screen and (max-width: 850px) {
