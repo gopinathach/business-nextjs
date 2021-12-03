@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 @media only screen and (max-width: 600px) {
   body {

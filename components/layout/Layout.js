@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import rslogo from "../public/rslogo.png";
-import avatar from "../public/avatar.png";
-import { Drawer, Button,  Space } from "antd";
+import rslogo from "../../public/rslogo.png";
+import avatar from "../../public/avatar.png";
+import { Drawer, Button, Space } from "antd";
 import { useState } from "react";
 import "antd/dist/antd.css";
 
@@ -16,6 +16,34 @@ export default function Layouts({ children }) {
     setVisible(false);
   };
 
+  const time = new Date();
+  const currTime = time.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  });
+
+  const date = new Date();
+  const thisDate = date.toLocaleString("en-US", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  const today = new Date();
+  const day = today.getDay();
+  const daylist = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday ",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  console.log(`Today is : ${daylist[day]}.`);
+
   return (
     <div className="layout">
       <div className="layout_image">
@@ -23,7 +51,7 @@ export default function Layouts({ children }) {
           <Image src={rslogo} width={150} height={100} />
         </Link>
         <div className="right_layout-img">
-          <Image src={avatar} width={50} height={40} />
+          <Image src={avatar} width={50} height={50} />
 
           <div className="right_layout_user res_user">
             <p style={{ color: "#00e1ff" }} className="res_user">
@@ -52,7 +80,7 @@ export default function Layouts({ children }) {
 
           <a>Budget Process</a>
           <Link href="/request">
-            <a className="a-pr">PR Request</a>
+            <a className="a-pr">Leave Request</a>
           </Link>
           <Link href="/mytasks">
             <a>My Tasks</a>
@@ -62,8 +90,8 @@ export default function Layouts({ children }) {
         </div>
 
         <div className="nav_right res_user">
-          <p style={{ color: "#00e1ff", marginRight: "10px" }}> Day </p>
-          <p> Time </p> | <p> Date</p>
+          <p style={{ color: "#00e1ff", marginRight: "10px" }}> {daylist[day]} </p>
+          <p> {currTime} </p> | <p> {thisDate} </p>
         </div>
       </div>
 
@@ -78,9 +106,10 @@ export default function Layouts({ children }) {
         <Drawer
           title="Business"
           placement="left"
-          width={"60%"}
+          width="70%"
           onClose={onClose}
           visible={visible}
+          bodyStyle={{ backgroundColor: "white" }}
           extra={
             <Space>
               <Button onClick={onClose}>Cancel</Button>
@@ -106,7 +135,7 @@ export default function Layouts({ children }) {
 
             <a>Budget Process</a>
             <Link href="/request">
-              <a className="a-pr">PR Request</a>
+              <a className="a-pr">Leave Request</a>
             </Link>
             <Link href="/mytasks">
               <a>My Tasks</a>
@@ -149,13 +178,16 @@ export default function Layouts({ children }) {
           height: 30px;
           display: flex;
           justify-content: space-around;
-          padding-left: 20px;
+          padding-left: 50px;
           align-items: center;
         }
 
         .nav_right {
           margin-right: 30px;
           display: flex;
+        }
+        .nav_right p {
+          margin: 0 5px;
         }
 
         .nav_left {
@@ -241,10 +273,12 @@ export default function Layouts({ children }) {
             margin: 5px 0;
           }
           .nav_left {
+            margin-left: -22px;
             flex-direction: column;
             display: flex;
             align-items: flex-start;
           }
+
           a {
             color: black;
             margin-top: 10px;
@@ -253,14 +287,14 @@ export default function Layouts({ children }) {
 
           a:hover {
             background-color: #42c0fb;
-            width: 100%;
+            width: 104%;
             cursor: pointer;
             padding-left: 10px;
             color: white;
           }
           a:active {
             background-color: #42c0fb;
-            padding-left: 10px;
+            padding-left: 12px;
             color: white;
           }
           .page-content {

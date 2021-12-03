@@ -1,0 +1,137 @@
+.title {
+  font-size: 1.2rem;
+  font-family: sans-serif bold;
+  margin: 20px 35px;
+}
+
+.line {
+  height: 1px;
+  width: 94%;
+  margin: 0 3%;
+  background-color: grey;
+}
+.content_find {
+  padding: 1rem 2rem;
+  top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search_box {
+  display: flex;
+  align-items: center;
+  width: 199px;
+  height: 30px;
+  background-color: #e2e2e2;
+  padding: 0 10px;
+
+  input {
+    outline: none;
+    border: 0;
+    background-color: #e2e2e2;
+    width: 140px;
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+
+.dropdown select {
+  outline: none;
+  border: 0;
+  background-color: #e2e2e2;
+  width: 230px;
+  height: 30px;
+}
+
+.content_right {
+  display: flex;
+  align-items: center;
+  p {
+    margin: 1rem;
+    font-family: sans-serif;
+  }
+}
+
+.content_bottom {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 50px 15px 50px;
+  p {
+    font-size: 10px;
+    font-family: sans-serif;
+    color: #878787;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1rem;
+  }
+  .content_find {
+    padding: -0.5rem 0.5rem;
+  }
+  .search_box {
+    width: 100px;
+    height: 28px;
+    padding: 0 5px;
+    input {
+      width: 60px;
+      height: 28px;
+      margin-left: 5px;
+    }
+  }
+  .dropdown select {
+    width: 160px;
+    height: 28px;
+  }
+  .content_right > p {
+    margin: 0.8rem;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .content_find {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .search_box {
+    width: 76vw;
+    height: 28px;
+    padding: 0 5px;
+    input {
+      width: 55vw;
+      height: 28px;
+      margin-left: 5px;
+    }
+  }
+  .dropdown select {
+    width: 76vw;
+    height: 28px;
+    margin-top: 15px;
+  }
+
+  .content_right > p {
+    display: none;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .search_box {
+    width: 72vw;
+    input {
+      width: 50vw;
+    }
+  }
+  .dropdown select {
+    width: 72vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content_bottom {
+    margin: 20px 40px 10px 40px;
+    p {
+      font-size: 6px;
+    }
+  }
+}
