@@ -3,11 +3,19 @@ import Image from "next/image";
 import rslogo from "../../public/rslogo.png";
 import avatar from "../../public/avatar.png";
 import { Drawer, Button, Space } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 
 export default function Layouts({ children }) {
+  const [time, setTime] = useState(0);
   const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+     setInterval(() => {
+      setTime(prevTime => prevTime + 1); 
+    }, 1000);
+  }, []);
+
   const showDrawer = () => {
     setVisible(true);
   };
@@ -16,24 +24,22 @@ export default function Layouts({ children }) {
     setVisible(false);
   };
 
-  const time = new Date();
-  const currTime = time.toLocaleString("en-US", {
+  const today = new Date();
+  const currTime = today.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
     hour12: true,
   });
 
-  const date = new Date();
-  const thisDate = date.toLocaleString("en-US", {
+  const currDate = today.toLocaleString("en-US", {
     day: "2-digit",
-    month: "2-digit",
+    month: "short",
     year: "numeric",
   });
 
-  const today = new Date();
   const day = today.getDay();
-  const daylist = [
+  const currDay = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -42,7 +48,7 @@ export default function Layouts({ children }) {
     "Friday",
     "Saturday",
   ];
-  console.log(`Today is : ${daylist[day]}.`);
+  // console.log(`Today is : ${currDay[day]}`);
 
   return (
     <div className="layout">
@@ -90,8 +96,11 @@ export default function Layouts({ children }) {
         </div>
 
         <div className="nav_right res_user">
-          <p style={{ color: "#00e1ff", marginRight: "10px" }}> {daylist[day]} </p>
-          <p> {currTime} </p> | <p> {thisDate} </p>
+          <p style={{ color: "#00e1ff", marginRight: "10px" }}>
+            {" "}
+            {currDay[day]}{" "}
+          </p>
+          <p> {currTime} </p> | <p> {currDate} </p>
         </div>
       </div>
 
